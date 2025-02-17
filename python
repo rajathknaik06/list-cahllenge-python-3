@@ -1,0 +1,65 @@
+""" Raja needs a program that helps him manage his shopping list efficiently. The program should allow him to perform the following operations:
+
+
+
+Add Items: Raja should be able to add multiple items to his shopping list at once. He will input a space-separated list of items, each item being a string.
+
+
+
+Remove Item: Raja should be able to remove a specific item from his shopping list. He will input the item he wants to remove, and if it exists in the list, it will be removed. If the item is not found, the program should notify him.
+
+
+
+Update List: Raja might realize he forgot to add some items initially. After removing unnecessary items, he should be able to update his list by adding more items. Similar to the initial input, he will provide a space-separated list of new items.
+
+Input format :
+The first line consists of the initial list of integers should be entered as space-separated values.
+
+The second line consists of the element to be removed should be entered as a single integer value.
+
+The third line consists of the new elements to be appended should be entered as space-separated values.
+
+Output format :
+The output displays the current state of Raja's shopping list after each operation. After adding items, removing items, and updating the list, the program prints the updated shopping list in the following format:
+
+
+
+"List1: [element1, element2, ... ,element_n]
+
+List after removal: [element1, element2, ... ,element_n]
+
+Final list: [element1, element2, ... ,element_n]".
+
+
+
+If the item is not found in the removing item process, print the message "Element not found in the list".
+
+"""
+
+
+my_list = []
+
+elements_input = input()
+elements_list = elements_input.split()
+
+for element_str in elements_list:
+    element = int(element_str)
+    my_list.append(element)
+
+print("List1:", my_list)
+
+element_to_remove = int(input())
+if element_to_remove in my_list:
+    my_list.remove(element_to_remove)
+    print("List after removal:", my_list)
+else:
+    print("Element not found in the list")
+
+elements_input = input()
+elements_list = elements_input.split()
+
+for element_str in elements_list:
+    element = int(element_str)
+    my_list.append(element)
+
+print("Final list:", my_list)
